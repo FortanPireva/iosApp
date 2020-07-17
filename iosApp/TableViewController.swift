@@ -11,13 +11,6 @@ import UIKit
 class TableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
-    var names=[
-        "john doe",
-        "john doe2",
-        "john doe3"
-    ]
-  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -45,6 +38,23 @@ extension TableViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped me")
     }
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let edit=UIContextualAction(style: .normal, title: "Edit") { (action, view,nil) in
+            print("edited")
+        }
+        edit.backgroundColor=#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        
+        return UISwipeActionsConfiguration(actions:[edit])
+    }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete=UIContextualAction(style: .destructive, title: "Delete") { (action,view,nil) in
+            
+            print("deleted")
+        }
+        delete.backgroundColor=#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        
+        return UISwipeActionsConfiguration(actions:[delete])
+    }
 }
 
 extension TableViewController: UITableViewDataSource {
@@ -55,6 +65,7 @@ extension TableViewController: UITableViewDataSource {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         let hero: Savedata
         hero = heroList[indexPath.row]
+        print(hero)
         cell.textLabel?.text = hero.notes
         return cell
     }

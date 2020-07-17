@@ -61,6 +61,7 @@ class ViewController: UIViewController {
         
         //displaying a success message
         print("Herro saved successfully")
+        readValues()
     }
     
    
