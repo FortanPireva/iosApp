@@ -10,7 +10,6 @@ import UIKit
 
 class TableViewController: UIViewController {
 
-    
     @IBOutlet weak var tableView: UITableView!
     
     var names=[
@@ -18,6 +17,7 @@ class TableViewController: UIViewController {
         "john doe2",
         "john doe3"
     ]
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,7 +30,6 @@ class TableViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -50,12 +49,13 @@ extension TableViewController : UITableViewDelegate {
 
 extension TableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return names.count
+        return heroList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCell(withIdentifier: "cell",for:indexPath)
-        cell.textLabel?.text=names[indexPath.row]
-        
+        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        let hero: Savedata
+        hero = heroList[indexPath.row]
+        cell.textLabel?.text = hero.notes
         return cell
     }
     
