@@ -8,14 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		03644A2E24C3B81800858FAD /* Savedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03644A2D24C3B81800858FAD /* Savedata.swift */; };
-		1313DBEF24C60C27004467BA /* Screen Shot 2020-07-20 at 7.18.43 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1313DBE724C60C25004467BA /* Screen Shot 2020-07-20 at 7.18.43 PM.png */; };
-		1313DBF024C60C27004467BA /* Screen Shot 2020-07-20 at 7.22.32 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1313DBE824C60C25004467BA /* Screen Shot 2020-07-20 at 7.22.32 PM.png */; };
-		1313DBF124C60C27004467BA /* Screen Shot 2020-07-20 at 7.23.35 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1313DBE924C60C25004467BA /* Screen Shot 2020-07-20 at 7.23.35 PM.png */; };
-		1313DBF224C60C27004467BA /* Screen Shot 2020-07-20 at 7.21.52 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1313DBEA24C60C25004467BA /* Screen Shot 2020-07-20 at 7.21.52 PM.png */; };
-		1313DBF324C60C27004467BA /* Screen Shot 2020-07-20 at 7.24.09 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1313DBEB24C60C26004467BA /* Screen Shot 2020-07-20 at 7.24.09 PM.png */; };
-		1313DBF424C60C27004467BA /* Screen Shot 2020-07-20 at 7.24.28 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1313DBEC24C60C26004467BA /* Screen Shot 2020-07-20 at 7.24.28 PM.png */; };
-		1313DBF524C60C27004467BA /* Screen Shot 2020-07-20 at 7.22.45 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1313DBED24C60C26004467BA /* Screen Shot 2020-07-20 at 7.22.45 PM.png */; };
-		1313DBF624C60C27004467BA /* Screen Shot 2020-07-20 at 7.22.15 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1313DBEE24C60C27004467BA /* Screen Shot 2020-07-20 at 7.22.15 PM.png */; };
 		13F5933C24C0FE5E00EF20F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5933B24C0FE5E00EF20F3 /* AppDelegate.swift */; };
 		13F5933E24C0FE5E00EF20F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5933D24C0FE5E00EF20F3 /* ViewController.swift */; };
 		13F5934124C0FE5E00EF20F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F5933F24C0FE5E00EF20F3 /* Main.storyboard */; };
@@ -26,14 +18,15 @@
 
 /* Begin PBXFileReference section */
 		03644A2D24C3B81800858FAD /* Savedata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Savedata.swift; sourceTree = "<group>"; };
-		1313DBE724C60C25004467BA /* Screen Shot 2020-07-20 at 7.18.43 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2020-07-20 at 7.18.43 PM.png"; path = "../../Screen Shot 2020-07-20 at 7.18.43 PM.png"; sourceTree = "<group>"; };
-		1313DBE824C60C25004467BA /* Screen Shot 2020-07-20 at 7.22.32 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2020-07-20 at 7.22.32 PM.png"; path = "../../Screen Shot 2020-07-20 at 7.22.32 PM.png"; sourceTree = "<group>"; };
-		1313DBE924C60C25004467BA /* Screen Shot 2020-07-20 at 7.23.35 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2020-07-20 at 7.23.35 PM.png"; path = "../../Screen Shot 2020-07-20 at 7.23.35 PM.png"; sourceTree = "<group>"; };
-		1313DBEA24C60C25004467BA /* Screen Shot 2020-07-20 at 7.21.52 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2020-07-20 at 7.21.52 PM.png"; path = "../../Screen Shot 2020-07-20 at 7.21.52 PM.png"; sourceTree = "<group>"; };
-		1313DBEB24C60C26004467BA /* Screen Shot 2020-07-20 at 7.24.09 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2020-07-20 at 7.24.09 PM.png"; path = "../../Screen Shot 2020-07-20 at 7.24.09 PM.png"; sourceTree = "<group>"; };
-		1313DBEC24C60C26004467BA /* Screen Shot 2020-07-20 at 7.24.28 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2020-07-20 at 7.24.28 PM.png"; path = "../../Screen Shot 2020-07-20 at 7.24.28 PM.png"; sourceTree = "<group>"; };
-		1313DBED24C60C26004467BA /* Screen Shot 2020-07-20 at 7.22.45 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2020-07-20 at 7.22.45 PM.png"; path = "../../Screen Shot 2020-07-20 at 7.22.45 PM.png"; sourceTree = "<group>"; };
-		1313DBEE24C60C27004467BA /* Screen Shot 2020-07-20 at 7.22.15 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2020-07-20 at 7.22.15 PM.png"; path = "../../Screen Shot 2020-07-20 at 7.22.15 PM.png"; sourceTree = "<group>"; };
+		1313DBF724C60D13004467BA /* Screen Shot 2020-07-20 at 7.18.43 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-07-20 at 7.18.43 PM.png"; sourceTree = "<group>"; };
+		1313DBF924C60D43004467BA /* Screen Shot 2020-07-20 at 7.22.15 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-07-20 at 7.22.15 PM.png"; sourceTree = "<group>"; };
+		1313DBFA24C60D43004467BA /* Screen Shot 2020-07-20 at 7.22.45 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-07-20 at 7.22.45 PM.png"; sourceTree = "<group>"; };
+		1313DBFB24C60D43004467BA /* Screen Shot 2020-07-20 at 7.18.43 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2020-07-20 at 7.18.43 PM.png"; path = "../../Screen Shot 2020-07-20 at 7.18.43 PM.png"; sourceTree = "<group>"; };
+		1313DBFC24C60D43004467BA /* Screen Shot 2020-07-20 at 7.23.35 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-07-20 at 7.23.35 PM.png"; sourceTree = "<group>"; };
+		1313DBFD24C60D44004467BA /* Screen Shot 2020-07-20 at 7.22.32 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-07-20 at 7.22.32 PM.png"; sourceTree = "<group>"; };
+		1313DBFE24C60D44004467BA /* Screen Shot 2020-07-20 at 7.24.09 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-07-20 at 7.24.09 PM.png"; sourceTree = "<group>"; };
+		1313DBFF24C60D44004467BA /* Screen Shot 2020-07-20 at 7.21.52 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-07-20 at 7.21.52 PM.png"; sourceTree = "<group>"; };
+		1313DC0024C60D44004467BA /* Screen Shot 2020-07-20 at 7.24.28 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2020-07-20 at 7.24.28 PM.png"; sourceTree = "<group>"; };
 		13F5933824C0FE5E00EF20F3 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F5933B24C0FE5E00EF20F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13F5933D24C0FE5E00EF20F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,9 +48,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1313DBF824C60D34004467BA /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				1313DBFB24C60D43004467BA /* Screen Shot 2020-07-20 at 7.18.43 PM.png */,
+				1313DBFF24C60D44004467BA /* Screen Shot 2020-07-20 at 7.21.52 PM.png */,
+				1313DBF924C60D43004467BA /* Screen Shot 2020-07-20 at 7.22.15 PM.png */,
+				1313DBFD24C60D44004467BA /* Screen Shot 2020-07-20 at 7.22.32 PM.png */,
+				1313DBFA24C60D43004467BA /* Screen Shot 2020-07-20 at 7.22.45 PM.png */,
+				1313DBFC24C60D43004467BA /* Screen Shot 2020-07-20 at 7.23.35 PM.png */,
+				1313DBFE24C60D44004467BA /* Screen Shot 2020-07-20 at 7.24.09 PM.png */,
+				1313DC0024C60D44004467BA /* Screen Shot 2020-07-20 at 7.24.28 PM.png */,
+				1313DBF724C60D13004467BA /* Screen Shot 2020-07-20 at 7.18.43 PM.png */,
+			);
+			path = screenshots;
+			sourceTree = "<group>";
+		};
 		13F5932F24C0FE5E00EF20F3 = {
 			isa = PBXGroup;
 			children = (
+				1313DBF824C60D34004467BA /* screenshots */,
 				13F5933A24C0FE5E00EF20F3 /* iosApp */,
 				13F5933924C0FE5E00EF20F3 /* Products */,
 			);
@@ -79,14 +89,6 @@
 				03644A2D24C3B81800858FAD /* Savedata.swift */,
 				13F5933F24C0FE5E00EF20F3 /* Main.storyboard */,
 				13F5934224C0FE5E00EF20F3 /* Assets.xcassets */,
-				1313DBE724C60C25004467BA /* Screen Shot 2020-07-20 at 7.18.43 PM.png */,
-				1313DBEA24C60C25004467BA /* Screen Shot 2020-07-20 at 7.21.52 PM.png */,
-				1313DBEE24C60C27004467BA /* Screen Shot 2020-07-20 at 7.22.15 PM.png */,
-				1313DBE824C60C25004467BA /* Screen Shot 2020-07-20 at 7.22.32 PM.png */,
-				1313DBED24C60C26004467BA /* Screen Shot 2020-07-20 at 7.22.45 PM.png */,
-				1313DBE924C60C25004467BA /* Screen Shot 2020-07-20 at 7.23.35 PM.png */,
-				1313DBEB24C60C26004467BA /* Screen Shot 2020-07-20 at 7.24.09 PM.png */,
-				1313DBEC24C60C26004467BA /* Screen Shot 2020-07-20 at 7.24.28 PM.png */,
 				13F5934424C0FE5E00EF20F3 /* LaunchScreen.storyboard */,
 				13F5934724C0FE5E00EF20F3 /* Info.plist */,
 				13F5934F24C1103000EF20F3 /* TableViewController.swift */,
@@ -154,15 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13F5934624C0FE5E00EF20F3 /* LaunchScreen.storyboard in Resources */,
-				1313DBEF24C60C27004467BA /* Screen Shot 2020-07-20 at 7.18.43 PM.png in Resources */,
-				1313DBF524C60C27004467BA /* Screen Shot 2020-07-20 at 7.22.45 PM.png in Resources */,
-				1313DBF424C60C27004467BA /* Screen Shot 2020-07-20 at 7.24.28 PM.png in Resources */,
-				1313DBF024C60C27004467BA /* Screen Shot 2020-07-20 at 7.22.32 PM.png in Resources */,
 				13F5934324C0FE5E00EF20F3 /* Assets.xcassets in Resources */,
-				1313DBF324C60C27004467BA /* Screen Shot 2020-07-20 at 7.24.09 PM.png in Resources */,
-				1313DBF124C60C27004467BA /* Screen Shot 2020-07-20 at 7.23.35 PM.png in Resources */,
-				1313DBF624C60C27004467BA /* Screen Shot 2020-07-20 at 7.22.15 PM.png in Resources */,
-				1313DBF224C60C27004467BA /* Screen Shot 2020-07-20 at 7.21.52 PM.png in Resources */,
 				13F5934124C0FE5E00EF20F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
