@@ -59,14 +59,15 @@ extension TableViewController : UITableViewDelegate {
 
 extension TableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return heroList.count
+        return noteList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        let hero: Savedata
-        hero = heroList[indexPath.row]
-        print(hero)
-        cell.textLabel?.text = hero.notes
+        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
+        let note = noteList[indexPath.row]
+        
+        cell.textLabel?.text=note.note
+        cell.detailTextLabel?.text=note.date
+        
         return cell
     }
     

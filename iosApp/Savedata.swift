@@ -8,13 +8,17 @@
 
 import UIKit
 
-class Savedata: NSObject {
+class Note: NSObject {
     var id: Int
-    var notes: String?
+    var note: String?
+    var date:String?
     
-    
-    init(id: Int, notes: String?){
+    init(id: Int, note: String?,date:String?){
         self.id = id
-        self.notes = notes
+        self.note = note
+        self.date=date
         
-    }}
+    }
+    
+}
+

@@ -10,27 +10,33 @@ import UIKit
 import SQLite3
 
 var db: OpaquePointer?
-var heroList = [Savedata]()
+var noteList = [Note]()
 class ViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textfield: UITextField!
     
+    @IBOutlet weak var datepicker: UIDatePicker!
     @IBAction func buttonSave(_ sender: Any) {
         
-        let notes = textfield.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let note = textfield.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        let datetext=datepicker.date.description(with: Locale(identifier: "en_US"))
+        
         
         //validating that values are not empty
-        if(notes?.isEmpty)!{
+        if(note?.isEmpty)!{
             textfield.layer.borderColor = UIColor.red.cgColor
             return
         }
+        
+        
         
         //creating a statement
         var stmt: OpaquePointer?
         
         //the insert query
-        let queryString = "INSERT INTO Heroes (name) VALUES (?)"
+        let queryString = "INSERT INTO Notes (note,date) VALUES (?,?)"
         
         //preparing the query
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
@@ -40,11 +46,17 @@ class ViewController: UIViewController {
         }
         
         //binding the parameters
-        if sqlite3_bind_text(stmt, 1, notes, -1, nil) != SQLITE_OK{
+        if sqlite3_bind_text(stmt, 1, note, -1, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("failure binding name: \(errmsg)")
             return
         }
+        if sqlite3_bind_text(stmt, 2, datetext, -1, nil) != SQLITE_OK{
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("failure binding name: \(errmsg)")
+            return
+        }
+        print("datetext inserted")
         
        
         //executing the query to insert values
@@ -58,6 +70,8 @@ class ViewController: UIViewController {
         textfield.text=""
       
       
+        datepicker.setDate(Date.init(timeIntervalSinceNow: 0), animated: true)
+        
         
         //displaying a success message
         print("Herro saved successfully")
@@ -69,10 +83,10 @@ class ViewController: UIViewController {
     func readValues(){
         
         //first empty the list of heroes
-        heroList.removeAll()
+        noteList.removeAll()
         
         //this is our select query
-        let queryString = "SELECT * FROM Heroes"
+        let queryString = "SELECT * FROM Notes"
         
         //statement pointer
         var stmt:OpaquePointer?
@@ -87,11 +101,17 @@ class ViewController: UIViewController {
         //traversing through all the records
         while(sqlite3_step(stmt) == SQLITE_ROW){
             let id = sqlite3_column_int(stmt, 0)
-            let notes = String(cString: sqlite3_column_text(stmt, 1))
+            let note = String(cString: sqlite3_column_text(stmt, 1))
+            let datetext=String(cString:sqlite3_column_text(stmt, 2))
+           
+            print(datetext)
             
+       
             
             //adding values to list
-            heroList.append(Savedata(id: Int(id), notes: String(describing: notes)))
+            noteList.append(Note(id: Int(id), note: String(describing: note),date:datetext))
+            
+           
         }
         
         
@@ -102,7 +122,7 @@ class ViewController: UIViewController {
         
         //the database file
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            .appendingPathComponent("HeroesDatabase.sqlite")
+            .appendingPathComponent("notedb.sqlite")
         
         //opening the database
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
@@ -111,12 +131,11 @@ class ViewController: UIViewController {
         }
         
         //creating table
-        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Heroes (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, powerrank INTEGER)", nil, nil, nil) != SQLITE_OK {
+        if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS Notes (id INTEGER PRIMARY KEY AUTOINCREMENT, note TEXT, date TEXT)", nil, nil, nil) != SQLITE_OK {
             print("error")
             return
         }
         readValues()
-        print("Cdo gje ne rregull")
     }
     
     @IBAction func button(_ sender: UIButton) {
