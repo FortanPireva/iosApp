@@ -63,6 +63,43 @@ class Note: NSObject {
         
         
     }
-    
+    public func editRow() -> Void {
+        //the insert query
+        let queryString = "UPDATE Notes SET note=(?),date=(?) where id=(?)"
+        //preparing the query
+        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error preparing insert: \(errmsg)")
+            return
+        }
+        
+        if sqlite3_bind_text(stmt, 1, note, -1, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("failure binding id: \(errmsg)")
+            return
+        }
+        if sqlite3_bind_text(stmt, 2, date, -1, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("failure binding id: \(errmsg)")
+            return
+        }
+        //binding the parameters
+        if sqlite3_bind_int(stmt, 3,Int32(id)) != SQLITE_OK{
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("failure binding id: \(errmsg)")
+            return
+        }
+        
+        //executing the query to edit values
+        if sqlite3_step(stmt) != SQLITE_DONE {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("failure deleting note: \(errmsg)")
+            return
+        }
+        
+        print("deleted")
+        
+        
+    }
 }
 

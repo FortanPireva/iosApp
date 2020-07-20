@@ -42,6 +42,16 @@ class TableViewController: UIViewController {
         tableView.deleteRows(at: [index], with: UITableViewRowAnimation.fade)
         
     }
+    func editRow(index:IndexPath,text:String,date:String?)-> Void {
+        let note=noteList[index.row]
+        note.note=text
+        if date != nil {
+            note.date=date
+        }
+        noteList[index.row]=note
+        tableView.reloadRows(at: [index], with: .top)
+        note.editRow()
+    }
 
 }
 extension TableViewController : UITableViewDelegate {
@@ -49,10 +59,49 @@ extension TableViewController : UITableViewDelegate {
         print("You tapped me")
     }
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        var date:String?=nil
+        var text:String?=nil
         let edit=UIContextualAction(style: .normal, title: "Edit") { (action, view,nil) in
-            print("edited")
+            let editalertContorller=UIAlertController(title: "Edit note", message: "Edit note message or date", preferredStyle: .alert)
+            editalertContorller.addTextField(configurationHandler: {(textfield)-> Void in
+                textfield.text=noteList[indexPath.row].note
+            })
+            
+            let cancelAction=UIAlertAction(title: "Cancel", style:.cancel, handler: {actioni->Void in
+                editalertContorller.dismiss(animated: true, completion: nil)
+            })
+            let okAction=UIAlertAction(title:"Ok",style:.destructive,handler:{action->Void in
+                text=editalertContorller.textFields![0].text!
+                self.editRow(index:indexPath,text:text!,date:date)
+            })
+            let displayDateAction=UIAlertAction(title:"Edit the date",style:.destructive,handler:{action->Void in
+                text=editalertContorller.textFields![0].text!
+                let datealertcontrolerr=UIAlertController(title: "Change date", message: "anotherdate", preferredStyle: .actionSheet)
+            
+                let datepicker=UIDatePicker(frame: CGRect(x: 0, y: 0, width: datealertcontrolerr.view.frame.width, height: 200))
+                datepicker.timeZone=NSTimeZone.local
+             
+                let doneAction=UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: { (action) in
+                    date=datepicker.date.description(with:Locale(identifier: "en_US"))
+                    self.editRow(index: indexPath, text: text!, date: date)
+                    datealertcontrolerr.dismiss(animated: true, completion: nil)
+                    
+                })
+                let height=NSLayoutConstraint(item: datealertcontrolerr.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.1, constant: 400)
+                datealertcontrolerr.view.addConstraint(height)
+                datealertcontrolerr.view.addSubview(datepicker)
+                datealertcontrolerr.addAction(doneAction)
+                self.present(datealertcontrolerr, animated: true, completion: nil)
+            })
+            editalertContorller.addAction(cancelAction)
+            editalertContorller.addAction(okAction)
+            editalertContorller.addAction(displayDateAction	)
+            self.present(editalertContorller,animated:true,completion:nil)
         }
+    
         edit.backgroundColor=#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        
         
         return UISwipeActionsConfiguration(actions:[edit])
     }
