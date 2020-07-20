@@ -32,6 +32,16 @@ class TableViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func deleteRow(index:IndexPath)->Void {
+        print("indexi osht \(index.row)")
+        let note=noteList[index.row]
+        note.deleteFromDb();
+        print("delete tbl")
+        noteList.remove(at: index.row)
+        tableView.deleteRows(at: [index], with: UITableViewRowAnimation.fade)
+        
+    }
 
 }
 extension TableViewController : UITableViewDelegate {
@@ -48,8 +58,20 @@ extension TableViewController : UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete=UIContextualAction(style: .destructive, title: "Delete") { (action,view,nil) in
+            let alert=UIAlertController(title: "Delete", message: "Are you sure for deleting note", preferredStyle:.alert)
             
-            print("deleted")
+            let cancelAction=UIAlertAction(title: "Cancel", style:.cancel, handler: {actioni->Void in
+                alert.dismiss(animated: true, completion: nil)
+            })
+            let okAction=UIAlertAction(title:"Ok",style:.destructive,handler:{action->Void in
+                    self.deleteRow(index:indexPath)
+            })
+            
+            alert.addAction(cancelAction)
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            
         }
         delete.backgroundColor=#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         

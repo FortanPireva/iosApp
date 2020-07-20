@@ -82,7 +82,7 @@ class ViewController: UIViewController {
     
     func readValues(){
         
-        //first empty the list of heroes
+        //first empty the list of notes
         noteList.removeAll()
         
         //this is our select query
