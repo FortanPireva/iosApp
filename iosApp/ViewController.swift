@@ -18,7 +18,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var datepicker: UIDatePicker!
     @IBAction func buttonSave(_ sender: Any) {
+        let alert = UIAlertController(title: "Are you sure ", message: " ", preferredStyle: .alert)
         
+       
+        
+        let action1 = UIAlertAction(title: "Save", style: .default) { (action) in
+            print("THIS IS ACTION 1")
+           
+        }
+        alert.addAction(action1)
+        present(alert, animated: true, completion: nil)
         let note = textfield.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         
         let datetext=datepicker.date.description(with: Locale(identifier: "en_US"))
@@ -75,6 +84,7 @@ class ViewController: UIViewController {
         
         //displaying a success message
         print("Herro saved successfully")
+        
         readValues()
     }
     
